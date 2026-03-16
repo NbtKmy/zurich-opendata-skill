@@ -1,6 +1,6 @@
 ---
 name: zurich-opendata
-description: Access Zurich city's open data APIs. Use when the user asks about Zurich city data such as: weather/air quality/water conditions, parking availability, pedestrian traffic, VBZ public transit, geodata (schools, playgrounds, sports facilities, districts), parliamentary motions and council members, Stadtratsbeschlüsse (city council decisions), tourism attractions/restaurants/events, or searching the 900+ open datasets at data.stadt-zuerich.ch. Triggers on queries like "Zürich Wetter", "Zurich parking", "Gemeinderat", "Stadtratsbeschlüsse", "VBZ Fahrgastzahlen", "offene Daten Zürich", "Zurich schools", "Zurich tourism", etc.
+description: "Access Zurich city's open data APIs. Use when the user asks about Zurich city data such as: weather/air quality/water conditions, parking availability, pedestrian traffic, VBZ public transit, geodata (schools, playgrounds, sports facilities, districts), parliamentary motions and council members, Stadtratsbeschlüsse (city council decisions), tourism attractions/restaurants/events, or searching the 900+ open datasets at data.stadt-zuerich.ch. Triggers on queries like Zürich Wetter, Zurich parking, Gemeinderat, Stadtratsbeschlüsse, VBZ Fahrgastzahlen, offene Daten Zürich, Zurich schools, Zurich tourism, etc."
 ---
 
 # Zurich Open Data Skill
