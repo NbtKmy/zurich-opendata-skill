@@ -40,7 +40,7 @@ Alle Daten sind unter **CC0** lizenziert (gemeinfrei, keine Einschränkungen).
 Klone dieses Repository direkt in das persönliche Skills-Verzeichnis von Claude Code:
 
 ```bash
-git clone https://github.com/malkreide/zurich-opendata-skill ~/.claude/skills/zurich-opendata
+git clone https://github.com/NbtKmy/zurich-opendata-skill.git ~/.claude/skills/zurich-opendata
 ```
 
 Der Skill ist danach in jeder Claude Code-Sitzung verfügbar.
@@ -50,7 +50,7 @@ Der Skill ist danach in jeder Claude Code-Sitzung verfügbar.
 Klone dieses Repository in das Skills-Verzeichnis deines Projekts:
 
 ```bash
-git clone https://github.com/malkreide/zurich-opendata-skill .claude/skills/zurich-opendata
+git clone https://github.com/NbtKmy/zurich-opendata-skill.git .claude/skills/zurich-opendata
 ```
 
 Der Skill ist dann nur innerhalb dieses Projekts verfügbar.
