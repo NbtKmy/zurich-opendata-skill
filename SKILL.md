@@ -66,7 +66,7 @@ import urllib.request, json, urllib.parse
 params = urllib.parse.urlencode({
     'resource_id': 'f9aa1373-404f-443b-b623-03ff02d2d0b7',
     'limit': 5,
-    'sort': 'Timestamp desc'
+    'sort': 'Datum desc'
 })
 url = f'https://data.stadt-zuerich.ch/api/3/action/datastore_search?{params}'
 with urllib.request.urlopen(url) as r:
@@ -75,6 +75,30 @@ for rec in data['result']['records']:
     print(rec)
 "
 ```
+
+## Troubleshooting: When a DataStore query fails
+
+If a `datastore_search` call returns an error (e.g. HTTP 409 CONFLICT, `"field not found"`, or empty results when data is expected), the resource's schema may have changed. Follow these steps:
+
+**Step 1 — Fetch the current field names (limit=0 is fast):**
+```bash
+python3 -c "
+import urllib.request, json, urllib.parse
+params = urllib.parse.urlencode({'resource_id': '<resource_id>', 'limit': 0})
+url = f'https://data.stadt-zuerich.ch/api/3/action/datastore_search?{params}'
+with urllib.request.urlopen(url) as r:
+    data = json.loads(r.read())
+for f in data['result']['fields']:
+    print(f['id'], '-', f.get('type',''))
+"
+```
+
+**Step 2 — Compare against `api_reference.md` and update any field names that differ.**
+
+Common causes of breakage:
+- Timestamp field renamed (e.g. `Timestamp` → `Datum`)
+- Station name format changed (e.g. `Kaserne` → `Zch_Kaserne`)
+- Yearly resource rotation: some datasets publish a new resource each January; if `resource_show` returns 404, search for the dataset by name and pick the latest resource
 
 ## Notes
 

@@ -101,9 +101,9 @@ All via CKAN DataStore. Sort by `Timestamp desc` for latest values.
 ### Weather (hourly, 5 stations)
 **Resource ID:** `f9aa1373-404f-443b-b623-03ff02d2d0b7`
 
-Key fields: `Timestamp`, `Standort`, `Parameter`, `Wert`, `Einheit`
+Key fields: `Datum`, `Standort`, `Parameter`, `Wert`, `Einheit`, `Intervall`, `Status`
 
-Stations: `Stampfenbachstrasse`, `Schimmelstrasse`, `Rosengartenstrasse`, `Heubeeribüel`, `Kaserne`
+Stations: `Zch_Stampfenbachstrasse`, `Zch_Schimmelstrasse`, `Zch_Rosengartenstrasse`, `Zch_Heubeeribüel`, `Zch_Kaserne`
 
 Parameters: `T` (temperature °C), `Hr` (humidity %), `p` (pressure hPa), `RainDur` (rain min/h), `StrGlo` (solar radiation)
 
@@ -111,7 +111,7 @@ Parameters: `T` (temperature °C), `Hr` (humidity %), `p` (pressure hPa), `RainD
 params = {
     'resource_id': 'f9aa1373-404f-443b-b623-03ff02d2d0b7',
     'filters': json.dumps({"Parameter": "T"}),
-    'sort': 'Timestamp desc',
+    'sort': 'Datum desc',
     'limit': 5
 }
 ```
@@ -119,7 +119,7 @@ params = {
 ### Air Quality (hourly, 5 stations)
 **Resource ID:** `90410203-4b4f-4a65-9015-1fca2792e04d`
 
-Key fields: `Timestamp`, `Standort`, `Parameter`, `Wert`, `Einheit`
+Key fields: `Datum`, `Standort`, `Parameter`, `Wert`, `Einheit`, `Intervall`, `Status`
 
 Stations: `Zch_Stampfenbachstrasse`, `Zch_Schimmelstrasse`, `Zch_Rosengartenstrasse`, `Zch_Heubeeribüel`, `Zch_Kaserne`
 
@@ -129,9 +129,9 @@ Parameters: `NO2` (µg/m³, WHO limit 40), `O3` (µg/m³), `PM10` (µg/m³, WHO 
 - **Tiefenbrunnen:** `f86b3581-6fbc-4337-ab1a-b6ead9d15daf`
 - **Mythenquai:** `61e26c94-c521-473f-b7bf-bb0d73f21e9f`
 
-Key fields: `Timestamp`, `Parameter`, `Wert`, `Einheit`
+Key fields: `timestamp_utc`, `timestamp_cet`, `water_temperature`, `air_temperature`, `water_level`, `wind_speed_avg_10min`, `wind_direction`, `humidity`, `barometric_pressure_qfe`
 
-Parameters: `Wassertemperatur` (°C), `Seespiegel` (m ü.M.), `Windgeschwindigkeit` (m/s), `Windrichtung` (°)
+Sort by `timestamp_cet desc` for latest values.
 
 ---
 
